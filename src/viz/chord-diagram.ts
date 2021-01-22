@@ -33,7 +33,6 @@ export class ChordDiagram extends LitElement {
 
   updated() {
     const svg = d3.select(this.shadowRoot!.firstElementChild)
-    console.log('Updated', svg.node(), this.data)
 
     svg.attr(
       'viewBox',

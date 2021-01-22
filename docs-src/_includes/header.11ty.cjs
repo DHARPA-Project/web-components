@@ -1,7 +1,7 @@
-module.exports = function(data) {
+module.exports = function (data) {
   return `
 <header>
-  <h1>&lt;my-element></h1>
-  <h2>A web component just for me.</h2>
-</header>`;
-};
+  <h1>&lt;dharpa-*></h1>
+  <h2>Web components for Digital Humanities</h2>
+</header>`
+}

@@ -14,51 +14,90 @@
   <body>
     
 <header>
-  <h1>&lt;my-element></h1>
-  <h2>A web component just for me.</h2>
+  <h1>&lt;dharpa-*></h1>
+  <h2>Web components for Digital Humanities</h2>
 </header>
     
 <nav>
   <a href="">Home</a>
-  <a href="examples/">Examples</a>
   <a href="api/">API</a>
   <a href="install/">Install</a>
 </nav>
     <div id="main-wrapper">
       <main>
-        <h1>&lt;my-element&gt;</h1>
-<p><code>&lt;my-element&gt;</code> is an awesome element. It's a great introduction to building web components with LitElement, with nice documentation site as well.</p>
-<h2>As easy as HTML</h2>
+        <h1>&lt;dharpa-*&gt;</h1>
+<p>A collection of reusable components for applications in the field of digital humanities. Built for <a href="https://dharpa.org/">DHARPA Project</a>.</p>
+<h2>Visualization</h2>
+<h3>Chord Diagram</h3>
 <section class="columns">
   <div>
-<p><code>&lt;my-element&gt;</code> is just an HTML element. You can it anywhere you can use HTML!</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-element</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-element</span><span class="token punctuation">></span></span></code></pre>
+<p><code>&lt;dharpa-chord-diagram&gt;</code> is just an HTML element. You can it anywhere you can use HTML!</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dharpa-chord-diagram</span> <span class="token punctuation">/></span></span></code></pre>
   </div>
-  <div>
-<p><my-element></my-element></p>
+  <div class="section-dharpa-chord-diagram">
+<p><dharpa-chord-diagram width="600" height="600"></dharpa-chord-diagram></p>
+<script>
+document.querySelector('.section-dharpa-chord-diagram dharpa-chord-diagram').data = Object.assign([
+[0, 9, 4, 3, 4, 2],
+[9, 0, 2, 3, 0, 4],
+[4, 2, 0, 10, 8, 2],
+[3, 3, 10, 0, 18, 11],
+[4, 0, 8, 18, 0, 7],
+[2, 4, 2, 11, 7, 0]], {
+names: ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5', 'Topic 6'],
+colors: ["#c4c4c4", "#69b40f", "#ec1d25", "#c8125c", "#008fc8", "#10218b", "#134b24", "#737373"]
+})
+</script>
   </div>
 </section>
-<h2>Configure with attributes</h2>
+<!-- ## Configure with attributes
+
 <section class="columns">
   <div>
-<p><code>&lt;my-element&gt;</code> can be configured with attributed in plain HTML.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-element</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTML<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-element</span><span class="token punctuation">></span></span></code></pre>
+
+`<my-element>` can be configured with attributed in plain HTML.
+
+```html
+<my-element name="HTML"></my-element>
+```
+
   </div>
   <div>
-<p><my-element name="HTML"></my-element></p>
+
+<my-element name="HTML"></my-element>
+
   </div>
 </section>
-<h2>Declarative rendering</h2>
+
+## Declarative rendering
+
 <section class="columns">
   <div>
-<p><code>&lt;my-element&gt;</code> can be used with declarative rendering libraries like Angular, React, Vue, and lit-html</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>html<span class="token punctuation">,</span> render<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'lit-html'</span><span class="token punctuation">;</span><br><br><span class="token keyword">const</span> name<span class="token operator">=</span><span class="token string">"lit-html"</span><span class="token punctuation">;</span><br><br><span class="token function">render</span><span class="token punctuation">(</span>html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>  &lt;h2>This is a &amp;lt;my-element&amp;gt;&lt;/h2><br>  &lt;my-element .name=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">>&lt;/my-element><br></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+`<my-element>` can be used with declarative rendering libraries like Angular, React, Vue, and lit-html
+
+```js
+import { html, render } from 'lit-html'
+
+const name = 'lit-html'
+
+render(
+  html`
+    <h2>This is a &lt;my-element&gt;</h2>
+    <my-element .name=${name}></my-element>
+  `,
+  document.body
+)
+```
+
   </div>
   <div>
+
 <h2>This is a &lt;my-element&gt;</h2>
 <my-element name="lit-html"></my-element>
+
   </div>
-</section>
+</section> -->
 
       </main>
     </div>

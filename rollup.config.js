@@ -33,12 +33,13 @@ export default {
     resolve(),
     terser({
       module: true,
-      warnings: true,
-      mangle: {
-        properties: {
-          regex: /^__/
-        }
-      }
+      warnings: true
+      // TODO: disabled because mangling breaks d3
+      // mangle: {
+      //   properties: {
+      //     regex: /^__/
+      //   }
+      // }
     }),
     filesize({
       showBrotliSize: true
