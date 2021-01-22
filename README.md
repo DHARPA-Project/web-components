@@ -1,6 +1,6 @@
-# LitElement TypeScript starter 
+# DHARPA Web Components
 
-This project includes a sample component using LitElement with TypeScript.
+Documentation available at [https://dharpa.org/web-components/](https://dharpa.org/web-components/).
 
 ## Setup
 
@@ -53,15 +53,16 @@ There is a development HTML file located at `/dev/index.html` that you can view 
 ## Editing
 
 If you use VS Code, we highly recommend the [lit-plugin extension](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin), which enables some extremely useful features for lit-html templates:
-  - Syntax highlighting
-  - Type-checking
-  - Code completion
-  - Hover-over docs
-  - Jump to definition
-  - Linting
-  - Quick Fixes
-  
-  The project is setup to recommend lit-plugin to VS Code users if they don't already have it installed.
+
+- Syntax highlighting
+- Type-checking
+- Code completion
+- Hover-over docs
+- Jump to definition
+- Linting
+- Quick Fixes
+
+The project is setup to recommend lit-plugin to VS Code users if they don't already have it installed.
 
 ## Linting
 
