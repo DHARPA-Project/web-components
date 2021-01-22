@@ -56,14 +56,17 @@
     {
       "name": "dharpa-chord-diagram",
       "path": "./src/viz/chord-diagram.ts",
+      "description": "Chord diagram.",
       "attributes": [
         {
           "name": "width",
+          "description": "Width of the SVG element",
           "type": "number",
           "default": "0"
         },
         {
           "name": "height",
+          "description": "Height of the SVG element",
           "type": "number",
           "default": "0"
         }
@@ -72,17 +75,20 @@
         {
           "name": "width",
           "attribute": "width",
+          "description": "Width of the SVG element",
           "type": "number",
           "default": "0"
         },
         {
           "name": "height",
           "attribute": "height",
+          "description": "Height of the SVG element",
           "type": "number",
           "default": "0"
         },
         {
           "name": "data",
+          "description": "Data to render. Diagram is re-rendered every time this property is modifed.",
           "type": "ChordData",
           "default": "[]"
         }

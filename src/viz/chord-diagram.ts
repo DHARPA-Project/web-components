@@ -6,11 +6,20 @@ interface ChordData extends Array<Array<number>> {
   colors?: string[]
 }
 
+/**
+ * Chord diagram.
+ */
 @customElement('dharpa-chord-diagram')
 export class ChordDiagram extends LitElement {
+  /** Width of the SVG element */
   @property({ type: Number }) width = 0
+  /** Height of the SVG element */
   @property({ type: Number }) height = 0
 
+  /**
+   * Data to render. Diagram is re-rendered every time this property is modifed.
+   * @see {ChordData} for more information about data format.
+   */
   @property({ attribute: false }) data: ChordData = []
 
   render() {
