@@ -3,4 +3,4 @@
 /test/
 
 build
-*.bundled.js
+/*.bundled.js
