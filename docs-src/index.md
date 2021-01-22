@@ -20,6 +20,12 @@ A collection of reusable components for applications in the field of digital hum
 <dharpa-chord-diagram />
 ```
 
+Just add data to render and it is immediately updated.
+
+```js
+document.querySelector('dharpa-chord-diagram').data = mydata
+```
+
   </div>
   
   <div class="section-dharpa-chord-diagram">
