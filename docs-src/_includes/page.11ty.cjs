@@ -1,10 +1,10 @@
-const header = require('./header.11ty.cjs');
-const footer = require('./footer.11ty.cjs');
-const nav = require('./nav.11ty.cjs');
-const relative = require('./relative-path.cjs');
+const header = require('./header.11ty.cjs')
+const footer = require('./footer.11ty.cjs')
+const nav = require('./nav.11ty.cjs')
+const relative = require('./relative-path.cjs')
 
-module.exports = function(data) {
-  const {title, page, content} = data;
+module.exports = function (data) {
+  const { title, page, content } = data
   return `
 <!doctype html>
 
@@ -16,7 +16,10 @@ module.exports = function(data) {
     <link rel="stylesheet" href="${relative(page.url, '/docs.css')}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Roboto+Mono">
     <link href="${relative(page.url, '/prism-okaidia.css')}" rel="stylesheet" />
-    <script type="module" src="${relative(page.url, '/my-element.bundled.js')}"></script>
+    <script type="module" src="${relative(
+      page.url,
+      '/dharpa-web-components.bundled.js'
+    )}"></script>
   </head>
   <body>
     ${header()}
@@ -28,5 +31,5 @@ module.exports = function(data) {
     </div>
     ${footer()}
   </body>
-</html>`;
-};
+</html>`
+}

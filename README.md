@@ -7,7 +7,7 @@ This project includes a sample component using LitElement with TypeScript.
 Install dependencies:
 
 ```bash
-npm i
+yarn install
 ```
 
 ## Build
@@ -17,13 +17,13 @@ This sample uses the TypeScript compiler to produce JavaScript that runs in mode
 To build the JavaScript version of your component:
 
 ```bash
-npm run build
+yarn build
 ```
 
 To watch files and rebuild when the files are modified, run the following command in a separate shell:
 
 ```bash
-npm run build:watch
+yarn build:watch
 ```
 
 Both the TypeScript compiler and lit-analyzer are configured to be very strict. You may want to change `tsconfig.json` to make them less strict.
@@ -35,7 +35,7 @@ This sample uses Karma, Chai, Mocha, and the open-wc test helpers for testing. S
 Tests can be run with the `test` script:
 
 ```bash
-npm test
+yarn test
 ```
 
 ## Dev Server
@@ -45,14 +45,14 @@ This sample uses open-wc's [es-dev-server](https://github.com/open-wc/open-wc/tr
 To run the dev server and open the project in a new browser tab:
 
 ```bash
-npm run serve
+yarn serve
 ```
 
 There is a development HTML file located at `/dev/index.html` that you can view at http://localhost:8000/dev/index.html.
 
 ## Editing
 
-If you use VS Code, we highly reccomend the [lit-plugin extension](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin), which enables some extremely useful features for lit-html templates:
+If you use VS Code, we highly recommend the [lit-plugin extension](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin), which enables some extremely useful features for lit-html templates:
   - Syntax highlighting
   - Type-checking
   - Code completion
@@ -61,7 +61,7 @@ If you use VS Code, we highly reccomend the [lit-plugin extension](https://marke
   - Linting
   - Quick Fixes
   
-  The project is setup to reccomend lit-plugin to VS Code users if they don't already have it installed.
+  The project is setup to recommend lit-plugin to VS Code users if they don't already have it installed.
 
 ## Linting
 
@@ -72,7 +72,7 @@ The rules are mostly the recommended rules from each project, but some have been
 To lint the project run:
 
 ```bash
-npm run lint
+yarn lint
 ```
 
 ## Formatting
@@ -90,19 +90,19 @@ To enable the site go to the GitHub settings and change the GitHub Pages &quot;S
 To build the site, run:
 
 ```bash
-npm run docs
+yarn docs
 ```
 
 To serve the site locally, run:
 
 ```bash
-npm run docs:serve
+yarn docs:serve
 ```
 
 To watch the site files, and re-build automatically, run:
 
 ```bash
-npm run docs:watch
+yarn docs:watch
 ```
 
 The site will usually be served at http://localhost:8000.

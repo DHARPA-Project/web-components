@@ -12,36 +12,36 @@
  * http://polymer.github.io/PATENTS.txt
  */
 
-import filesize from 'rollup-plugin-filesize';
-import {terser} from 'rollup-plugin-terser';
-import resolve from 'rollup-plugin-node-resolve';
-import replace from '@rollup/plugin-replace';
+import filesize from 'rollup-plugin-filesize'
+import { terser } from 'rollup-plugin-terser'
+import resolve from 'rollup-plugin-node-resolve'
+import replace from '@rollup/plugin-replace'
 
 export default {
-  input: 'my-element.js',
+  input: 'build/index.js',
   output: {
-    file: 'my-element.bundled.js',
-    format: 'esm',
+    file: 'dharpa-web-components.bundled.js',
+    format: 'esm'
   },
   onwarn(warning) {
     if (warning.code !== 'THIS_IS_UNDEFINED') {
-      console.error(`(!) ${warning.message}`);
+      console.error(`(!) ${warning.message}`)
     }
   },
   plugins: [
-    replace({'Reflect.decorate': 'undefined'}),
+    replace({ 'Reflect.decorate': 'undefined' }),
     resolve(),
     terser({
       module: true,
       warnings: true,
       mangle: {
         properties: {
-          regex: /^__/,
-        },
-      },
+          regex: /^__/
+        }
+      }
     }),
     filesize({
-      showBrotliSize: true,
-    }),
-  ],
-};
+      showBrotliSize: true
+    })
+  ]
+}

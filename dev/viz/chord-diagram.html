@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>&lt;dharpa-chord-diagram> Demo</title>
+    <script type="module" src="../../build/viz/chord-diagram.js"></script>
+    <style>
+      body {
+        margin: 2rem auto;
+        height: 100%;
+        overflow: hidden;
+        max-width: 900px;
+      }
+    </style>
+  </head>
+  <body>
+    <dharpa-chord-diagram width="900" height="900"/>
+    <script>
+      document.querySelector('dharpa-chord-diagram').data = Object.assign([
+        [0, 9, 4, 3, 4, 2],
+        [9, 0, 2, 3, 0, 4],
+        [4, 2, 0, 10, 8, 2],
+        [3, 3, 10, 0, 18, 11],
+        [4, 0, 8, 18, 0, 7],
+        [2, 4, 2, 11, 7, 0]], {
+          names: ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5', 'Topic 6'],
+          colors: ["#c4c4c4", "#69b40f", "#ec1d25", "#c8125c", "#008fc8", "#10218b", "#134b24", "#737373"]
+        })
+    </script>
+  </body>
+</html>

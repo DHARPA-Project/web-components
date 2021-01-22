@@ -21,6 +21,7 @@
       {
         "argsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "@typescript-eslint/member-delimiter-style": "off"
   }
 }
