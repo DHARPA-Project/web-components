@@ -4,3 +4,5 @@
 
 build
 /*.bundled.js
+
+.ipynb_checkpoints
