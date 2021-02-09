@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>&lt;dharpa-chord-diagram> Demo</title>
+    <script type="module" src="../../build/viz/map.js"></script>
+    <script src="https://d3js.org/d3-fetch.v2.min.js"></script>
+    <style>
+      body {
+        margin: 2rem auto;
+        height: 100%;
+        overflow: hidden;
+        max-width: 900px;
+      }
+    </style>
+  </head>
+  <body>
+    <dharpa-map width="900" height="600" />
+    <script>
+      d3.json('data/world_1914.json').then(mapData => {
+        document.querySelector('dharpa-map').data = mapData
+      })
+    </script>
+  </body>
+</html>
