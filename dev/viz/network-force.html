@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>&lt;dharpa-network-force> Demo</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="module" src="../../build/viz/network-force.js"></script>
+    <style>
+        body {
+            margin: 2rem auto;
+            height: 100%;
+            overflow: hidden;
+            max-width: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    <dharpa-network-force width="600" height="400" />
+
+    <script>
+
+        d3.csv("data/nodes.csv").then(nodes => {
+            d3.csv("data/edges.csv").then(links => {
+
+                /*  data = {
+                      nodes: nodes, links: links, chartParams: {
+                          width: 600,
+                          height: 400,
+                          displayIsolatedNodes: "no",
+                          nodesSizeParam: "equal",
+                          nodesIdCol: "Id",
+                          shortestPath: null,
+                          tooltipDivName: "",
+                          nodesLabelCol: "LabelTrans",
+                          groupColName: "Language",
+                      }
+                  }*/
+
+                document.querySelector('dharpa-network-force').data = [1, 2, 3]
+
+            })
+        })
+
+    </script>
+</body>
+
+</html>
