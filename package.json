@@ -34,8 +34,6 @@
   ],
   "author": "DHARPA Project",
   "dependencies": {
-    "22e391431987b712": "https://api.observablehq.com/d/22e391431987b712.tgz?v=3",
-    "@observablehq/runtime": "^4.8.2",
     "d3": "6",
     "lit-element": "2"
   },
