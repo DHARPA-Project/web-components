@@ -93,6 +93,52 @@
           "default": "[]"
         }
       ]
+    },
+    {
+      "name": "dharpa-network-force",
+      "path": "./src/viz/network-force.ts",
+      "description": "Network analysis force graph.",
+      "attributes": [
+        {
+          "name": "width",
+          "description": "Width of the SVG element",
+          "type": "number",
+          "default": "600"
+        },
+        {
+          "name": "height",
+          "description": "Height of the SVG element",
+          "type": "number",
+          "default": "400"
+        },
+        {
+          "name": "data",
+          "description": "Data to render. Map is re-rendered every time this property is modifed.",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "width",
+          "attribute": "width",
+          "description": "Width of the SVG element",
+          "type": "number",
+          "default": "600"
+        },
+        {
+          "name": "height",
+          "attribute": "height",
+          "description": "Height of the SVG element",
+          "type": "number",
+          "default": "400"
+        },
+        {
+          "name": "data",
+          "attribute": "data",
+          "description": "Data to render. Map is re-rendered every time this property is modifed.",
+          "default": "{}"
+        }
+      ]
     }
   ]
 }
