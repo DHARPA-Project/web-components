@@ -57,8 +57,10 @@ export class NetworkForce extends LitElement {
         : [-this.width / 2, -this.height / 2, this.width, this.height]
     svg.attr('viewBox', viewBox as any)
 
-    const links = this.data.links.map((d: object | null) => Object.create(d))
-    const nodes = this.data.nodes.map((d: object | null) => Object.create(d))
+    const links =
+      this.data?.links?.map((d: object | null) => Object.create(d)) ?? []
+    const nodes =
+      this.data?.nodes?.map((d: object | null) => Object.create(d)) ?? []
 
     const simulPrep = d3
       .forceSimulation(nodes)
@@ -129,8 +131,8 @@ export class NetworkForce extends LitElement {
     const scale = d3
       .scaleLinear()
       .domain([
-        d3.min(this.data.nodes, (d: any) => d[param]),
-        d3.max(this.data.nodes, (d: any) => d[param])
+        d3.min(this.data?.nodes ?? [], (d: any) => d[param]),
+        d3.max(this.data?.nodes ?? [], (d: any) => d[param])
       ] as any)
       .range([3, 20])
     return scale(value)
