@@ -18,51 +18,38 @@
 </head>
 
 <body>
-    <dharpa-network-force width="600" height="400" />
+    <dharpa-network-force width="600" height="400" display-isolated-nodes />
 
     <script>
+        const graph = document.querySelector('dharpa-network-force')
+        const shortestPath = ['1','20','36']
+        
+        d3
+            .csv("data/nodes.csv")
+            .then(nodesCsv => nodesCsv.map(d => ({
+                id: d.Id,
+                label: d.LabelTrans,
+                group: d.Language,
+                scaler: d.eigenvector,
+                // scaler: d.degree,
+                // scaler: d.indegree,
+                // scaler: d.betweenness,
+            })))
+            .then(nodes => { graph.nodes = nodes })
 
-        d3.csv("data/nodes.csv").then(nodes => {
-            d3.csv("data/edges.csv").then(links => {
+        d3
+            .csv("data/edges.csv")
+            .then(edgesCsv => edgesCsv.map(d => ({
+                source: d.source,
+                target: d.target,
+                // value: d.value
+            })))
+            .then(edges => { graph.edges = edges })
 
-                nodes2 = nodes.map(d => {
-                    return {
-                        id: +d.Id,
-                        label: d.LabelTrans,
-                        group: d.Language,
-                        degree: d.degree,
-                        indegree: d.indegree,
-                        eigenvector: d.eigenvector,
-                        betweenness: d.betweenness
-                    }
-                })
 
-                links2 = links.map(d => {
-                    return {
-                        source: +d.source,
-                        target: +d.target,
-                        value: d.value
-                    }
-                }
-
-                )
-
-                data = {
-                    nodes: nodes2,
-                    links: links2,
-                    chartParams: {
-                        width: 600,
-                        height: 400,
-                        displayIsolatedNodes: "yes",
-                        nodesSize: "equal",
-                        nodesIdCol: "Id",
-                        shortestPath: null
-                    }
-                }
-
-                document.querySelector('dharpa-network-force').data = data
-
-            })
+        graph.addEventListener('node-clicked', ({ detail: node }) => {
+            console.log('Node clicked', node)
+            graph.shortestPath = graph.shortestPath.length > 0 ? [] : shortestPath
         })
 
     </script>
