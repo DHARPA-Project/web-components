@@ -117,7 +117,6 @@ export class NetworkForce extends LitElement {
       .data(edges)
       .join('line')
       .attr('class', 'graph-links')
-      .attr('link-id', (d: any) => `${d.source.index}-${d.target.index}`)
       .attr('stroke-width', (d) => {
         const sourceId = (d.source as SimulationNodeDatum).id
         const targetId = (d.target as SimulationNodeDatum).id
