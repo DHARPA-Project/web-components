@@ -110,13 +110,32 @@ export class NetworkForce extends LitElement {
       .attr('stroke', '#999')
       .attr('stroke-opacity', 0.6)
 
+    const shortestPathIsProvided = this.shortestPath?.length > 0
+
     const link = edgesGroup
       .selectAll('line')
       .data(edges)
       .join('line')
       .attr('class', 'graph-links')
       .attr('link-id', (d: any) => `${d.source.index}-${d.target.index}`)
-      .attr('stroke-width', 0.5)
+      .attr('stroke-width', (d) => {
+        const sourceId = (d.source as SimulationNodeDatum).id
+        const targetId = (d.target as SimulationNodeDatum).id
+
+        if (shortestPathIsProvided) {
+          return this.edgeIsInShortestPath(sourceId, targetId) ? 1 : 0.5
+        }
+        return 0.5
+      })
+      .attr('opacity', (d) => {
+        const sourceId = (d.source as SimulationNodeDatum).id
+        const targetId = (d.target as SimulationNodeDatum).id
+
+        if (shortestPathIsProvided) {
+          return this.edgeIsInShortestPath(sourceId, targetId) ? 1 : 0.2
+        }
+        return 1
+      })
 
     const nodesGroup = svg
       .select('g.nodes')
@@ -133,7 +152,12 @@ export class NetworkForce extends LitElement {
       .data(nodes)
       .join('circle')
       .attr('class', 'graph-node')
-      .attr('opacity', 1)
+      .attr('opacity', (d) => {
+        if (shortestPathIsProvided) {
+          return this.shortestPath.includes(d.id) ? 1 : 0.2
+        }
+        return 1
+      })
       .attr('r', (d) => scaleNode(d.scaler ?? 0) ?? 5)
       .attr('fill', (d) => colorScale(d.group))
       .call((drag(simulation) as unknown) as any)
@@ -152,6 +176,18 @@ export class NetworkForce extends LitElement {
     })
 
     return svg.node()
+  }
+
+  edgeIsInShortestPath(
+    source: EdgeDatum['source'],
+    target: EdgeDatum['target']
+  ): boolean {
+    const sourceIdx = this.shortestPath.findIndex((id) => source === id)
+    if (sourceIdx >= 0) {
+      const targetId = this.shortestPath[sourceIdx + 1]
+      return targetId === target
+    }
+    return false
   }
 }
 

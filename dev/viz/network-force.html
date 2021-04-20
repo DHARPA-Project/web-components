@@ -22,6 +22,7 @@
 
     <script>
         const graph = document.querySelector('dharpa-network-force')
+        const shortestPath = ['1','20','36']
         
         d3
             .csv("data/nodes.csv")
@@ -45,8 +46,10 @@
             })))
             .then(edges => { graph.edges = edges })
 
+
         graph.addEventListener('node-clicked', ({ detail: node }) => {
             console.log('Node clicked', node)
+            graph.shortestPath = graph.shortestPath.length > 0 ? [] : shortestPath
         })
 
     </script>
