@@ -112,9 +112,10 @@
           "default": "400"
         },
         {
-          "name": "data",
-          "description": "Data to render. Map is re-rendered every time this property is modifed.",
-          "default": "{}"
+          "name": "displayIsolatedNodes",
+          "description": "Height of the SVG element",
+          "type": "boolean",
+          "default": "false"
         }
       ],
       "properties": [
@@ -133,10 +134,34 @@
           "default": "400"
         },
         {
-          "name": "data",
-          "attribute": "data",
-          "description": "Data to render. Map is re-rendered every time this property is modifed.",
-          "default": "{}"
+          "name": "displayIsolatedNodes",
+          "attribute": "displayIsolatedNodes",
+          "description": "Height of the SVG element",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "nodes",
+          "description": "Nodes of the graph",
+          "type": "NodeDatum[]",
+          "default": "[]"
+        },
+        {
+          "name": "edges",
+          "description": "Edges of the graph",
+          "type": "EdgeDatum[]",
+          "default": "[]"
+        },
+        {
+          "name": "shortestPath",
+          "description": "A list of IDs of nodes representing the shortest path between two nodes",
+          "type": "(string | number)[]",
+          "default": "[]"
+        }
+      ],
+      "events": [
+        {
+          "name": "node-clicked"
         }
       ]
     }

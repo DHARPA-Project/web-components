@@ -168,7 +168,7 @@
         </tr>
       
         <tr>
-          <td>data</td><td>Data to render. Map is re-rendered every time this property is modifed.</td><td>undefined</td><td>{}</td>
+          <td>displayIsolatedNodes</td><td>Height of the SVG element</td><td>boolean</td><td>false</td>
         </tr>
       
     </table>
@@ -189,13 +189,37 @@
         </tr>
       
         <tr>
-          <td>data</td><td>data</td><td>Data to render. Map is re-rendered every time this property is modifed.</td><td>undefined</td><td>{}</td>
+          <td>displayIsolatedNodes</td><td>displayIsolatedNodes</td><td>Height of the SVG element</td><td>boolean</td><td>false</td>
+        </tr>
+      
+        <tr>
+          <td>nodes</td><td>undefined</td><td>Nodes of the graph</td><td>NodeDatum[]</td><td>[]</td>
+        </tr>
+      
+        <tr>
+          <td>edges</td><td>undefined</td><td>Edges of the graph</td><td>EdgeDatum[]</td><td>[]</td>
+        </tr>
+      
+        <tr>
+          <td>shortestPath</td><td>undefined</td><td>A list of IDs of nodes representing the shortest path between two nodes</td><td>(string | number)[]</td><td>[]</td>
         </tr>
       
     </table>
     
         
-            
+        
+    <h3>Events</h3>
+    <table>
+      <tr>
+        <th>Name</th><th>Description</th>
+      </tr>
+      
+        <tr>
+          <td>node-clicked</td><td>undefined</td>
+        </tr>
+      
+    </table>
+      
           
         
         
